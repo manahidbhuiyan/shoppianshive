@@ -1,11 +1,74 @@
 @import "tailwindcss";
 
 
-.container{
-  max-width: 90%;
+@theme {
+  --breakpoint-2xs: 22rem;
+  --breakpoint-xs: 30rem;
+  --breakpoint-tab: '991px';
+}
+
+ul , li, a, p , div{
+  font-family: 'Poppins', sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: "Public Sans", serif;
+}
+
+/* container */
+.container {
+  width: 100% !important;
   font-family: 'Poppins', sans-serif;
 }
 
-ul , li, a, p , h1, h2, h3, h4, h5, h6, div{
-  font-family: 'Poppins', sans-serif;
+@media (min-width: 576px) {
+  .container, .container-sm {
+      max-width: 540px !important;
+  }
 }
+
+@media (min-width: 768px) {
+  .container, .container-md {
+      max-width: 720px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .container, .container-lg {
+      max-width: 960px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container, .container-xl {
+      max-width: 1140px !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container, .container-xl {
+      max-width: 1200px !important;
+  }
+}
+
+/* container-fluid */
+@media (min-width: 1899px) {
+  .container-fluid {
+    padding: 0 280px;
+  }
+}
+
+@media (min-width: 1600px ) {
+  .container-fluid {
+    padding: 0 150px;
+  }
+}
+
+@media (min-width: 767px) {
+  .container-fluid {
+    padding: 0 70px;
+  }
+}
+
+  .container-fluid {
+    padding: 0 50px;
+  }

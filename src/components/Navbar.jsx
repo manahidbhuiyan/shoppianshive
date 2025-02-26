@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X, AlignJustify, ChevronDown, Phone, Plus, Minus, MoveUpRight, SquareDashed } from "lucide-react"; // Sidebar Icons
 import reactLogo from "../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +7,8 @@ import { faFacebookF, faTwitter, faYoutube, faLinkedinIn } from "@fortawesome/fr
 const Navbar = () => {
   const [isMenuOpen, setMenuIsOpen] = useState(false);
   const [isSidebarOpen, setIsOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null); // Track dropdown state
+  const [openDropdown, setOpenDropdown] = useState(null); 
+  const [isSticky, setIsSticky] = useState(false)
 
   // Toggle Menubar
   const toggleMenubar = () => {
@@ -17,20 +18,42 @@ const Navbar = () => {
   const toggleSidebar = () => {
     setIsOpen(!isSidebarOpen);
   };
+  // hide side and menu bar
+  const toggleSideMenubar = () => {
+    setIsOpen(false);
+    setMenuIsOpen(false);
+  }
 
   // Toggle Dropdowns
   const toggleDropdown = (menu) => {
     setOpenDropdown(openDropdown === menu ? null : menu);
   };
 
+  useEffect(() =>{
+    const handleScroll = () =>{
+      if(window.scrollY > 200){
+        setIsSticky(true)
+      } else{
+        setIsSticky(false)
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll)
+
+    // clean up
+    return () => {
+      window.removeEventListener('scroll',handleScroll)
+    };
+  }, []);
+
   return (
-    <nav className="bg-white border-b border-b-[#eee3fa] fixed w-full top-0 left-0 z-50">
-      <div className="container mx-auto flex items-center justify-between py-[15px] md:py-0 ">
+    <nav className={`${isSticky ? 'bg-white sticky top-0 shadow-[0px_1px_14px_0px_rgba(0,0,0,0.13)]' : 'bg-[#FFFAF6]'} py-2.5 border-b border-b-[#eee3fa] w-full left-0 z-50 transition-all duration-300`}>
+      <div className="w-full container-fluid mx-auto flex items-center justify-between ">
         <a href="#" className="w-40 md:w-52">
           <img src={reactLogo} alt="" />
         </a>
 
-        <ul className="hidden md:flex items-center space-x-8 text-black">
+        <ul className="hidden lg:flex items-center space-x-8 text-black">
           <li>
             <a href="#" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
               Home
@@ -114,7 +137,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <button className="hidden md:flex justify-center items-center gap-1 bg-black relative overflow-hidden text-white leading-7 min-w-[145px] py-2 px-[18px] rounded-md transition-all duration-300 cursor-pointer text-[15px] group">
+          <button className="hidden xl:flex justify-center items-center gap-1 bg-black relative overflow-hidden text-white leading-7 min-w-[145px] py-2 px-[18px] rounded-md transition-all duration-300 cursor-pointer text-[15px] group">
             <span className="relative z-10 flex items-center gap-1">
               Contact Us <MoveUpRight className="text-white h-4 w-4 mt-[-3px]" />
             </span>
@@ -125,11 +148,11 @@ const Navbar = () => {
 
           {/* Sidebar Icon (Not Visible on Small Screens) */}
           <button onClick={toggleSidebar}>
-            <AlignJustify className="w-6 h-6 text-[#161616] cursor-pointer hidden md:block" />
+            <AlignJustify className="w-6 h-6 text-[#161616] cursor-pointer hidden lg:block" />
           </button>
           {/* Munubar Icon (Always Visible on Small Screens) */}
           <button onClick={toggleMenubar}>
-            <AlignJustify className="w-6 h-6 text-[#161616] cursor-pointer block md:hidden" />
+            <AlignJustify className="w-6 h-6 text-[#161616] cursor-pointer block lg:hidden" />
           </button>
         </div>
       </div>
@@ -199,7 +222,7 @@ const Navbar = () => {
 
       {/* Sidebar (Mobile) */}
       <div
-        className={`fixed top-0 right-0 h-full w-full min-[350px]:w-[80%] sm:w-[70%] z-20 p-5 bg-white shadow-md transform ${
+        className={`fixed overflow-scroll top-0 right-0 h-full w-full min-[350px]:w-[80%] sm:w-[70%] z-20 p-5 bg-white shadow-md transform ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-500 ease-in-out`}
       >
@@ -331,10 +354,9 @@ const Navbar = () => {
       {/* Sidebar Overlay (Closes Sidebar on Click) */}
       {(isSidebarOpen || isMenuOpen) && (
         <div
-          className="fixed inset-0 bg-[#151515] opacity-80 z-10"
+          className="fixed overflow-hidden inset-0 bg-[#151515] opacity-80 z-10"
           onClick={() => {
-            toggleSidebar();
-            toggleMenubar();
+            toggleSideMenubar();
           }}
         ></div>
       )}
