@@ -25,7 +25,7 @@ const Banner = () => {
       <div className="container mx-auto pt-20 md:pt-40 flex flex-col lg:flex-row justify-between items-center">
         <div className="flex flex-col px-1 2xs:px-0">
           
-          <SectionTitle title={`YOUR PARTNER IN TECH SUCCESS`} />
+          <SectionTitle title={`YOUR PARTNER IN TECH SUCCESS`} textColor={'#161616'} />
 
           {/* heading */}
           <h2 className="text-[28px] 2xs:text-[33px] xs:text-[45px] md:text-[55px] lg:text-[74px] font-extrabold leading-[114%] text-[#161616] ">

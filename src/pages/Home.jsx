@@ -10,6 +10,9 @@ import choose from "../assets/images/choose-1.jpg";
 import choose2RemoveBg from "../assets/images/choose-2-removebg.png";
 import upWork from "../assets/images/icon/upwork.svg";
 import fullStar from "../assets/images/icon/full-star.svg";
+import Counter from "../components/Counter";
+import ParallaxSection from "../components/Parallax";
+import Portfolio from "../components/Portfolio";
 
 const Home = () => {
   const { ref, inView } = useInView({
@@ -22,12 +25,12 @@ const Home = () => {
       <Navbar />
       <Banner />
       {/* why choose us */}
-      <div className="py-20 ">
+      <div className="pt-20 ">
         <div className="container mx-auto">
           {/* 1st section */}
           <div className="w-full flex flex-col xl:flex-row justify-between">
             <div className="w-full xl:w-[50%] flex flex-col px-1 2xs:px-0 md:px-6">
-              <SectionTitle title={`Why Choose Us`} />
+              <SectionTitle title={`Why Choose Us`} textColor={'#515151'} />
 
               {/* heading */}
               <h2 className="text-[28px] 2xs:text-[32px] xs:text-[45px] md:text-[55px] lg:text-[60px] font-extrabold leading-[114%] text-[#161616] ">
@@ -123,6 +126,40 @@ const Home = () => {
           </div>
         </div>
       </div>
+      
+      <Counter />
+      <ParallaxSection />
+      
+      <Portfolio />
+
+       {/* Section 6 - Content that scrolls over the parallax background */}
+       <section className="bg-white py-16 px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6">Content Below Parallax</h2>
+          <p className="mb-4">This content scrolls over the fixed background image when scrolling down.</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-3">Feature 1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-3">Feature 2</h3>
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+          
+          <p className="mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+        </div>
+      </section>
+      
+      {/* Section 7 */}
+      <section className="h-screen flex justify-center items-center bg-red-100">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold mb-4">Section 7</h2>
+          <p className="text-xl">Call to action or contact information</p>
+        </div>
+      </section>
     </div>
   );
 };
