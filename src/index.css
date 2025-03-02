@@ -1,10 +1,9 @@
 @import "tailwindcss";
 
-
 @theme {
   --breakpoint-2xs: 22rem;
   --breakpoint-xs: 30rem;
-  --breakpoint-tab: '991px';
+  --breakpoint-tab: 62rem;
 }
 
 ul , li, a, p , div{
@@ -17,7 +16,6 @@ h1, h2, h3, h4, h5, h6{
 /* container */
 .container {
   width: 100% !important;
-  font-family: 'Poppins', sans-serif;
 }
 
 @media (min-width: 576px) {

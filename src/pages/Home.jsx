@@ -13,6 +13,8 @@ import fullStar from "../assets/images/icon/full-star.svg";
 import Counter from "../components/Counter";
 import ParallaxSection from "../components/Parallax";
 import Portfolio from "../components/Portfolio";
+import ClientFeedback from "../components/ClientFeedback";
+import Toolset from "../components/Toolset";
 
 const Home = () => {
   const { ref, inView } = useInView({
@@ -129,8 +131,11 @@ const Home = () => {
       
       <Counter />
       <ParallaxSection />
-      
       <Portfolio />
+      <ClientFeedback />
+      <Toolset />
+
+
 
        {/* Section 6 - Content that scrolls over the parallax background */}
        <section className="bg-white py-16 px-8">

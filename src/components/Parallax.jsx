@@ -55,7 +55,7 @@ const ParallaxSection = () => {
       {/* Parallax Background - Takes full viewport height and stays fixed during scroll */}
       <div
         ref={bgRef}
-        className="absolute w-full h-screen bg-contain bg-center"
+        className="absolute w-full h-screen bg-cover bg-center bg-no-repeat "
         style={{
           backgroundImage: `url(${paralaxImage})`,
           zIndex: "-1",
@@ -82,7 +82,7 @@ const ParallaxSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="bg-white rounded-xl mt-10 shadow-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full max-w-7xl mx-auto z-10">
+        <div className="bg-white rounded-xl mt-10 shadow-md grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full max-w-[90%] md:max-w-7xl mx-auto z-10">
           {/* Software Development */}
           <div className="border-[#c8d3ff66] border-r border-b md:border-b-0 lg:border-r lg:border-b-0 p-6">
             <div className="flex justify-between items-center mb-4">
