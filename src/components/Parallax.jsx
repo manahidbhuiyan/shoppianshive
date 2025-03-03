@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { MoveUpRight } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 import paralaxImage from "../assets/images/services.jpg";
 
@@ -317,7 +318,15 @@ const ParallaxSection = () => {
 
         {/* View All Services Button */}
         <div className="mt-10 mb-16 z-10">
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-8 rounded-lg font-medium flex items-center transition-colors">
+
+        <button className="max-w-[300px] my-[30px] flex justify-center items-center gap-1 bg-[#3147ff] relative overflow-hidden text-white leading-7 py-4 px-[18px] rounded-lg transition-all duration-300 cursor-pointer text-[16px] font-semibold group">
+            <span className="relative z-10 flex items-center gap-1">
+              View All Services <MoveUpRight className="text-white h-4 w-4 mt-[-3px]" />{" "}
+            </span>
+            <span className="absolute inset-0 bg-black translate-x-[-100%] transition-transform duration-300 ease-in-out group-hover:translate-x-0"></span>
+          </button>
+
+          {/* <button className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-8 rounded-lg font-medium flex items-center transition-colors">
             View All Services
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -334,7 +343,7 @@ const ParallaxSection = () => {
               <path d="M5 12h14"></path>
               <path d="M12 5l7 7-7 7"></path>
             </svg>
-          </button>
+          </button> */}
         </div>
 
         {/* Bottom Section with Different Background Color */}

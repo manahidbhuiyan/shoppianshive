@@ -15,6 +15,8 @@ import ParallaxSection from "../components/Parallax";
 import Portfolio from "../components/Portfolio";
 import ClientFeedback from "../components/ClientFeedback";
 import Toolset from "../components/Toolset";
+import DevelopmentProcess from "../components/DevelopmentProcess";
+import Articals from "../components/Articals";
 
 const Home = () => {
   const { ref, inView } = useInView({
@@ -134,6 +136,8 @@ const Home = () => {
       <Portfolio />
       <ClientFeedback />
       <Toolset />
+      <DevelopmentProcess />
+      <Articals />
 
 
 

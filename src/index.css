@@ -46,6 +46,9 @@ h1, h2, h3, h4, h5, h6{
   .container, .container-xl {
       max-width: 1200px !important;
   }
+  .developmentProcess .container{
+    max-width: 1350px !important;
+  }
 }
 
 /* container-fluid */
