@@ -17,6 +17,7 @@ import ClientFeedback from "../components/ClientFeedback";
 import Toolset from "../components/Toolset";
 import DevelopmentProcess from "../components/DevelopmentProcess";
 import Articals from "../components/Articals";
+import Footer_1 from "../components/Footer_1";
 
 const Home = () => {
   const { ref, inView } = useInView({
@@ -138,6 +139,8 @@ const Home = () => {
       <Toolset />
       <DevelopmentProcess />
       <Articals />
+
+      <Footer_1 />
 
 
 

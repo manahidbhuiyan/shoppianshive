@@ -13,6 +13,10 @@ h1, h2, h3, h4, h5, h6{
   font-family: "Public Sans", serif;
 }
 
+h2 > div, h3 > div > a {
+  font-family: "Public Sans", serif;
+}
+
 /* container */
 .container {
   width: 100% !important;
