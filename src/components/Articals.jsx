@@ -27,10 +27,10 @@ const Articals = () => {
         {/* setion content */}
         <div className="w-full flex flex-wrap justify-start gap-5 pt-10 lg:pt-16">
           {/* item */}
-          <div className="w-full flex-1 min-w-[calc(33.33%-20px)] md:min-w-[calc(50%-20px)] lg:min-w-[calc(33.33%-20px)] item relative overflow-hidden group">
+          <div className="w-full flex-1 min-w-[100%] md:min-w-[calc(50%-20px)] lg:min-w-[calc(33.33%-20px)] item relative overflow-hidden group">
             {/* image */}
             <div className="w-full relative">
-              <img src={Image1} alt="" className="" />
+              <img src={Image1} alt="" className="w-full" />
               <img
                 src={Image1}
                 alt="Hover Image"
@@ -78,10 +78,10 @@ const Articals = () => {
             </div>
           </div>
 
-          <div className="w-full flex-1 min-w-[calc(33.33%-20px)] md:min-w-[calc(50%-20px)] lg:min-w-[calc(33.33%-20px)] item relative overflow-hidden group">
+          <div className="w-full flex-1 min-w-[100%] md:min-w-[calc(50%-20px)] lg:min-w-[calc(33.33%-20px)] item relative overflow-hidden group">
             {/* image */}
             <div className="w-full relative">
-              <img src={Image2} alt="" className="" />
+              <img src={Image2} alt="" className="w-full" />
               <img
                 src={Image2}
                 alt="Hover Image"
@@ -129,10 +129,10 @@ const Articals = () => {
             </div>
           </div>
 
-          <div className="w-full flex-1 min-w-[calc(33.33%-20px)] md:min-w-[calc(50%-20px)] lg:min-w-[calc(33.33%-20px)] item relative overflow-hidden group">
+          <div className="w-full flex-1 min-w-[100%] md:min-w-[calc(50%-20px)] lg:min-w-[calc(33.33%-20px)] item relative overflow-hidden group">
             {/* image */}
             <div className="w-full relative">
-              <img src={Image3} alt="" className="" />
+              <img src={Image3} alt="" className="w-full" />
               <img
                 src={Image3}
                 alt="Hover Image"

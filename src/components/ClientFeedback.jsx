@@ -24,7 +24,7 @@ const ClientFeedback = () => {
           Why Our Clients Trust <span className="inline-block w-3 h-3 bg-[#161616]"></span>
         </h2>
         {/* sub heading */}
-        <p className="text-[14px] 2xs:text-base lg:text-[16px] text-[#3f444b] mt-5 ">
+        <p className="text-[14px] 2xs:text-base lg:text-[16px] text-[#3f444b] mt-5 w-full text-wrap break-all ">
           Explore a showcase of our latest works, where innovation meets execution. From cutting-edge software solutions to captivating web designs.
         </p>
       </div>
@@ -38,7 +38,7 @@ const ClientFeedback = () => {
             <div className="w-full lg:w-7/12 xl:w-8/12 px-3">
               <div className="card-items pb-[45px] border-b border-[#D5C5EF] ">
                 <h6 className="text-[20px] font-medium leading-[40px] text-[#3147ff] ">I'm a new customer</h6>
-                <p className="text-[26px] font-normal leading-[46px] text-[#3F444B] mb-9 ">
+                <p className="text-[20px] md:text-[26px] font-normal leading-[46px] text-[#3F444B] mb-9 ">
                   It’s a pleasure working with Bunker. They understood our new brand positioning guidelines and translated them beautifully and consistently into.
                 </p>
                 <div className="item flex justify-between items-center">

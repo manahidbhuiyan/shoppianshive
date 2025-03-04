@@ -1,15 +1,17 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import SectionTitle from "../components/SectionTitle";
-import Navbar from "../components/Navbar";
-import Banner from "../components/Banner";
+
 import { MoveUpRight } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareCheck } from "@fortawesome/free-solid-svg-icons";
+
 import choose from "../assets/images/choose-1.jpg";
 import choose2RemoveBg from "../assets/images/choose-2-removebg.png";
 import upWork from "../assets/images/icon/upwork.svg";
 import fullStar from "../assets/images/icon/full-star.svg";
+
+import Banner from "../components/Banner";
 import Counter from "../components/Counter";
 import ParallaxSection from "../components/Parallax";
 import Portfolio from "../components/Portfolio";
@@ -19,7 +21,7 @@ import DevelopmentProcess from "../components/DevelopmentProcess";
 import Articals from "../components/Articals";
 import Footer_1 from "../components/Footer_1";
 
-const Home = () => {
+const HomePage = () => {
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -27,7 +29,6 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
       <Banner />
       {/* why choose us */}
       <div className="pt-20 ">
@@ -139,41 +140,10 @@ const Home = () => {
       <Toolset />
       <DevelopmentProcess />
       <Articals />
-
       <Footer_1 />
 
-
-
-       {/* Section 6 - Content that scrolls over the parallax background */}
-       <section className="bg-white py-16 px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6">Content Below Parallax</h2>
-          <p className="mb-4">This content scrolls over the fixed background image when scrolling down.</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-3">Feature 1</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-3">Feature 2</h3>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-          </div>
-          
-          <p className="mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-        </div>
-      </section>
-      
-      {/* Section 7 */}
-      <section className="h-screen flex justify-center items-center bg-red-100">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold mb-4">Section 7</h2>
-          <p className="text-xl">Call to action or contact information</p>
-        </div>
-      </section>
     </div>
   );
 };
 
-export default Home;
+export default HomePage;

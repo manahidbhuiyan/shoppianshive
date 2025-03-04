@@ -1,11 +1,9 @@
 // src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from '../src/pages/HomePage.jsx';
-import ServicesPage from '../src/pages/ServicesPage.jsx';
-import PortfolioPage from '../src/pages/PortfolioPage.jsx';
-import AboutUsPage from '../src/pages/AboutUsPage.jsx';
-import ContactPage from '../src/pages/ContactPage.jsx';
-import Header from '../src/components/Navbar.jsx';
+import AboutPage from '../src/pages/HomePage.jsx'; // Example page
+import Header from '../src/components/Navbar.jsx'; // Optional: If you have a Header component
+// import Footer from '../src/components/Footer_1.jsx'; // Optional: If you have a Footer component
 
 function App() {
   return (
@@ -15,7 +13,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/portfolio" element={<PortfolioPage />} />
-        <Route path="/about-us" element={<AboutUsPage />} />
+        <Route path="/about-us" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Router>

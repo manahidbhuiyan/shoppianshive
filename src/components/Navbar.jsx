@@ -3,12 +3,13 @@ import { X, AlignJustify, ChevronDown, Phone, Plus, Minus, MoveUpRight, SquareDa
 import reactLogo from "../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faTwitter, faYoutube, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuIsOpen] = useState(false);
   const [isSidebarOpen, setIsOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null); 
-  const [isSticky, setIsSticky] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [isSticky, setIsSticky] = useState(false);
 
   // Toggle Menubar
   const toggleMenubar = () => {
@@ -22,106 +23,59 @@ const Navbar = () => {
   const toggleSideMenubar = () => {
     setIsOpen(false);
     setMenuIsOpen(false);
-  }
-
-  // Toggle Dropdowns
-  const toggleDropdown = (menu) => {
-    setOpenDropdown(openDropdown === menu ? null : menu);
   };
 
-  useEffect(() =>{
-    const handleScroll = () =>{
-      if(window.scrollY > 200){
-        setIsSticky(true)
-      } else{
-        setIsSticky(false)
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
       }
     };
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll);
 
     // clean up
     return () => {
-      window.removeEventListener('scroll',handleScroll)
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <nav className={`${isSticky ? 'bg-white sticky top-0 shadow-[0px_1px_14px_0px_rgba(0,0,0,0.13)]' : 'bg-[#FFFAF6]'} py-2.5 border-b border-b-[#eee3fa] w-full left-0 z-50 transition-all duration-300`}>
+    <nav
+      className={`${isSticky ? "bg-white sticky top-0 shadow-[0px_1px_14px_0px_rgba(0,0,0,0.13)]" : "bg-[#FFFAF6]"} py-2.5 border-b border-b-[#eee3fa] w-full left-0 z-50 transition-all duration-300`}
+    >
       <div className="w-full container-fluid mx-auto flex items-center justify-between ">
-        <a href="#" className="w-40 md:w-52">
+        <Link to="/" className="w-40 md:w-52">
           <img src={reactLogo} alt="" />
-        </a>
+        </Link>
 
         <ul className="hidden lg:flex items-center space-x-8 text-black">
           <li>
-            <a href="#" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
+            <Link to="/" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
               Home
-            </a>
-          </li>
-          <li className="relative group" onMouseLeave={() => toggleDropdown(null)}>
-            <button
-              onMouseEnter={() => toggleDropdown("pages")}
-              className="flex items-center space-x-1 text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer"
-            >
-              Pages <ChevronDown className="w-4 h-4 ml-1 mt-1" />
-            </button>
-            {openDropdown === "pages" && (
-              <ul className="absolute top-[50px] left-0 min-w-[200px] bg-white shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] translate-y-[10px] transition-all duration-400 ease-in-out">
-                <li className="">
-                  <a href="#" className="block py-3 px-5 hover:bg-[#615cf6] text-base font-medium leading-7 hover:text-white border-b border-[#eeeeee]">
-                    About Us
-                  </a>
-                </li>
-                <li className="">
-                  <a href="#" className="block py-3 px-5 hover:bg-[#615cf6] text-base font-medium leading-7 hover:text-white border-b border-[#eeeeee]">
-                    Blog
-                  </a>
-                </li>
-                <li className="">
-                  <a href="#" className="block py-3 px-5 hover:bg-[#615cf6] text-base font-medium leading-7 hover:text-white border-b border-[#eeeeee]">
-                    Careers
-                  </a>
-                </li>
-              </ul>
-            )}
-          </li>
-          <li className="relative group" onMouseLeave={() => toggleDropdown(null)}>
-            <button
-              onMouseEnter={() => toggleDropdown("services")}
-              className="flex items-center space-x-1 text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer"
-            >
-              Services <ChevronDown className="w-4 h-4 ml-1 mt-1" />
-            </button>
-            {openDropdown === "services" && (
-              <ul className="absolute top-[50px] left-0 min-w-[200px] bg-white shadow-[0px_0px_10px_0px_rgba(0,0,0,0.2)] translate-y-[10px] transition-all duration-400 ease-in-out">
-                <li className="">
-                  <a href="#" className="block py-3 px-5 hover:bg-[#615cf6] text-base font-medium leading-7 hover:text-white border-b border-[#eeeeee]">
-                    Web Development
-                  </a>
-                </li>
-                <li className="">
-                  <a href="#" className="block py-3 px-5 hover:bg-[#615cf6] text-base font-medium leading-7 hover:text-white border-b border-[#eeeeee]">
-                    Web Design
-                  </a>
-                </li>
-                <li className="">
-                  <a href="#" className="block py-3 px-5 hover:bg-[#615cf6] text-base font-medium leading-7 hover:text-white border-b border-[#eeeeee]">
-                    SEO
-                  </a>
-                </li>
-              </ul>
-            )}
+            </Link>
           </li>
           <li>
-            <a href="#" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
+            <Link to="/services" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link to="/portfolio" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
               Portfolio
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
+            <Link to="/about-us" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -165,9 +119,9 @@ const Navbar = () => {
       >
         {/* Sidebar Header */}
         <div className="flex items-center justify-between mb-12">
-          <a href="#" className="w-40">
+          <Link to="/" className="w-40">
             <img src={reactLogo} alt="" />
-          </a>
+          </Link>
           <button onClick={toggleSidebar} className="w-[45px] h-[45px] flex justify-center items-center rounded-[50%] bg-[#615cf6] cursor-pointer">
             <X className="w-6 h-6 text-white font-bold" />
           </button>
@@ -228,9 +182,9 @@ const Navbar = () => {
       >
         {/* Sidebar Header */}
         <div className="flex items-center justify-between mb-4 ">
-          <a href="#" className="w-40">
+          <Link to="/" className="w-40">
             <img src={reactLogo} alt="" />
-          </a>
+          </Link>
           <button onClick={toggleMenubar} className="w-[45px] h-[45px] flex justify-center items-center rounded-[50%] bg-[#615cf6] ">
             <X className="w-6 h-6 text-white font-bold" />
           </button>
@@ -238,72 +192,29 @@ const Navbar = () => {
 
         <ul className="mb-4 space-y-2 text-[#161616]">
           <li className=" py-2 border-b border-gray-700">
-            <a href="#" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
+            <Link to="/" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
               Home
-            </a>
+            </Link>
           </li>
-
-          <li className="relative py-2 border-b border-gray-700">
-            <div className="flex items-center justify-between">
-              <button className={`block hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer ${openDropdown === "pages" ? "text-[#615cf6]" : ""}`}>Pages</button>
-              <button onClick={() => toggleDropdown("pages")}>{openDropdown === "pages" ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}</button>
-            </div>
-            {openDropdown === "pages" && (
-              <ul className="mt-2 space-y-2">
-                <li>
-                  <a href="#" className="block p-2 pl-5 border-b border-gray-700 text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="block p-2 pl-5 border-b border-gray-700 text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="block p-2 pl-5  text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
-                    Careers
-                  </a>
-                </li>
-              </ul>
-            )}
-          </li>
-          {/* Services Dropdown */}
-          <li className="relative py-2 border-b border-gray-700">
-            <div className="flex items-center justify-between">
-              <button className={`block hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer ${openDropdown === "services" ? "text-[#615cf6]" : ""}`}>Services</button>
-              <button onClick={() => toggleDropdown("services")}>{openDropdown === "services" ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}</button>
-            </div>
-            {openDropdown === "services" && (
-              <ul className="mt-2 space-y-2">
-                <li>
-                  <a href="#" className="block p-2 pl-5 border-b border-gray-700 text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
-                    Web Development
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="block p-2 pl-5 border-b border-gray-700 text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
-                    SEO
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="block p-2 pl-5 text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
-                    Marketing
-                  </a>
-                </li>
-              </ul>
-            )}
-          </li>
-
           <li className=" py-2 border-b border-gray-700">
-            <a href="#" className="block text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
+            <Link to="/services" className="block text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
+              Services
+            </Link>
+          </li>
+          <li className=" py-2 border-b border-gray-700">
+            <Link to="/portfolio" className="block text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
               Portfolio
-            </a>
+            </Link>
           </li>
           <li className=" py-2 border-b border-gray-700">
-            <a href="#" className="block text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
+            <Link to="/about-us" className="block text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
+              About us
+            </Link>
+          </li>
+          <li className=" py-2 border-b border-gray-700">
+            <Link to="/contact" className="block text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
 
