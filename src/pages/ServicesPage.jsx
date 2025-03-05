@@ -1,9 +1,10 @@
 import React from 'react'
+import BreadCrumb from '../components/breadcrumb'
 
 const ServicesPage = () => {
   return (
     <div>
-      this is service page
+      <BreadCrumb current={'Services'} />
     </div>
   )
 }

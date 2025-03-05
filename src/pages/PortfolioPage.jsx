@@ -1,9 +1,10 @@
 import React from 'react'
+import BreadCrumb from '../components/breadcrumb'
 
 const PortfolioPage = () => {
   return (
     <div>
-       this is portfolio page
+       <BreadCrumb current={'Portfolio'} />
     </div>
   )
 }

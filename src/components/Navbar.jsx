@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, AlignJustify, ChevronDown, Phone, Plus, Minus, MoveUpRight, SquareDashed } from "lucide-react"; // Sidebar Icons
+import { X, AlignJustify, Phone, MoveUpRight, SquareDashed } from "lucide-react"; // Sidebar Icons
 import reactLogo from "../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faTwitter, faYoutube, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";

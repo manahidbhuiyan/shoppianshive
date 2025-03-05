@@ -4,7 +4,7 @@ import BreadCrumb from '../components/breadcrumb'
 const AboutUsPage = () => {
   return (
     <div>
-       <BreadCrumb />
+       <BreadCrumb current={'About'} />
       
     </div>
   )
