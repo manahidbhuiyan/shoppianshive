@@ -25,6 +25,7 @@ import partner5 from "../assets/images/home/partners/05.png";
 import Image1 from "../assets/images/home/articals/image-1.png";
 import Image2 from "../assets/images/home/articals/image-2.png";
 import Image3 from "../assets/images/home/articals/image-3.png";
+import Footer_2 from "../components/Footer_2.jsx";
 
 
 
@@ -158,16 +159,33 @@ const AboutUsPage = () => {
       </div>
 
       {/* artical */}
-      <div className="bg-white py-20 px-3">
+      <div className="bg-white pb-20 px-3">
       <div className="container mx-auto">
         {/* setion top */}
-        <div className="flex flex-col justify-center items-center">
-          <div className="flex " >
-
-          </div>
+      <div className="max-w-full md:max-w-[80%] lg:max-w-[65%] w-full mx-auto  ">
+      <div className="flex flex-col justify-center items-center">
+        <div className="text-center py-2.5 px-5 leading-none inline-block bg-white mb-2.5">
+              <h6 className="text-[15px] text-[#515151] font-medium flex gap-1 items-center">
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4">
+                    <path d="M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z" fill="#2044F4" stroke="#2044F4" stroke-width="0.5" />
+                  </svg>
+                </span>
+                Blog & Article
+                <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4">
+                    <path d="M12 2 L15.09 8.26 L22 9.27 L17 14.14 L18.18 21.02 L12 17.77 L5.82 21.02 L7 14.14 L2 9.27 L8.91 8.26 Z" fill="#2044F4" stroke="#2044F4" stroke-width="0.5" />
+                  </svg>
+                </span>
+              </h6>
+            </div>
             <h2 className="text-4xl md:text-5xl lg:text-[60px] font-extrabold leading-[122%] text-[#161616] mb-2">
             Our latest articles
             </h2>
+            <p className="text-[#49515B] text-base font-medium text-center ">
+            Welcome to our FAQS section, where we address common queries and provide helpful solutions to ensure you get the most out of our CRM software.
+            </p>
+      </div>
         </div>
         {/* setion content */}
         <div className="w-full flex flex-wrap justify-start gap-5 pt-10 lg:pt-16">
@@ -327,6 +345,8 @@ const AboutUsPage = () => {
         </div>
       </div>
     </div>
+    {/* footer */}
+    <Footer_2 />
     </div>
   );
 };
