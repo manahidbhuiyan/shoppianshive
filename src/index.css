@@ -50,7 +50,7 @@ h2 > div, h3 > div > a {
   .container, .container-xl {
       max-width: 1200px !important;
   }
-  .developmentProcess .container{
+  .developmentProcess .container, .story-container{
     max-width: 1350px !important;
   }
 }
