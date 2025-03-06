@@ -44,7 +44,7 @@ const Footer_2 = () => {
         </div>
       </div>
       {/* footer bottom area */}
-      <div className="bg-white mt-10 shadow-md w-full max-w-[90%] md:max-w-7xl mx-auto rounded-tl-[20px] rounded-tr-[20px] ">
+      <div className="bg-white mt-10 md:mt-20 shadow-md w-full max-w-[90%] md:max-w-7xl mx-auto rounded-tl-[20px] rounded-tr-[20px] ">
         <div className="py-2.5 md:py-8 lg:py-[50px] px-2.5 md:px-10 lg:px-[80px] flex flex-wrap lg:flex-nowrap justify-between gap-5 ">
           <div className="w-full md:w-1/2 lg:w-[33%] mb-5 lg:mb-0 ">
             <img src={logo} alt="" className="pb-5 md:pb-7 w-[200px] " />
