@@ -98,7 +98,7 @@ const HomePage = () => {
         <div className="container mx-auto">
           {/* 1st section */}
           <div className="w-full flex flex-col xl:flex-row justify-between">
-            <div className="w-full xl:w-[50%] flex flex-col px-1 2xs:px-0 md:px-6">
+            <div className="w-full xl:w-[50%] flex flex-col px-1 2xs:px-0 md:px-6 animate-bottom-top">
               <SectionTitle title={`Why Choose Us`} textColor={"#515151"} />
 
               {/* heading */}
@@ -145,11 +145,11 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        {/* 2ns section */}
+        {/* 2nd section */}
         <div className="bg-[#f8f8f8] mt-0 xl:mt-[-175px]">
           <div className="container mx-auto py-[64px] xl:py-[90px]">
             <div className="flex w-full px-3 pb-4 lg:pb-10 xl:pb-0 xl:mb-20">
-              <div className="max-w-[470px]">
+              <div className="max-w-[470px] animate-bottom-top">
                 <div className="flex justify-start items-center gap-2 mb-3">
                   <FontAwesomeIcon icon={faSquareCheck} className="text-[26px] text-[#3147ff]" />
                   <h2 className="text-black text-[26px] font-semibold leading-[24px]">Unique Value Preposition</h2>
@@ -161,7 +161,7 @@ const HomePage = () => {
             </div>
             {/* 2nd row */}
             <div className="w-full flex flex-col md:flex-row justify-between pt-6">
-              <div className="w-full md:w-1/2 px-3 pb-10 md:pb-0">
+              <div className="w-full md:w-1/2 px-3 pb-10 md:pb-0 animate-bottom-top">
                 <div className="flex justify-start items-center gap-2 mb-3">
                   <FontAwesomeIcon icon={faSquareCheck} className="text-[26px] text-[#3147ff]" />
                   <h2 className="text-black text-[26px] font-semibold leading-[24px]">Client-Centric Approach</h2>
@@ -170,7 +170,7 @@ const HomePage = () => {
                   Clearly articulate what sets your company apart from competitors, such as specialized expertise, innovative solutions, or exceptional customer service.
                 </p>
               </div>
-              <div className="w-full md:w-1/2 px-3">
+              <div className="w-full md:w-1/2 px-3 animate-bottom-top">
                 <div className="flex justify-start items-center gap-2 mb-3">
                   <FontAwesomeIcon icon={faSquareCheck} className="text-[26px] text-[#3147ff]" />
                   <h2 className="text-black text-[26px] font-semibold leading-[24px]">Expert Team Members</h2>

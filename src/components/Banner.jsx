@@ -7,10 +7,10 @@ import videoImage from "../assets/images/video-image.png";
 
 // You can add this to your global CSS file
 const animationCSS = `
-@keyframes img-anim-top {
+@keyframes anim-bottom-top {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -23,7 +23,9 @@ const Banner = () => {
   return (
     <div className="w-full bg-no-repeat bg-center bg-cover " style={{ backgroundImage: `url(${heroBgImage})` }}>
       <div className="container mx-auto pt-20 md:pt-30 flex flex-col lg:flex-row justify-between items-center">
-        <div className="flex flex-col px-1 2xs:px-0">
+        <div className="flex flex-col px-1 2xs:px-0"  style={{
+                animation: "anim-bottom-top 1s forwards cubic-bezier(0.645, 0.045, 0.355, 1)",
+              }}>
           
           <SectionTitle title={`YOUR PARTNER IN TECH SUCCESS`} textColor={'#161616'} />
 
@@ -33,7 +35,7 @@ const Banner = () => {
           </h2>
           <p className="text-[14px] 2xs:text-base lg:text-[25px] text-[#3f444b] mt-5 ">As a leading provider of digital solutions, we specialize in crafting bespoke software and applications.</p>
 
-          <button className="max-w-[300px] my-[30px] flex justify-center items-center gap-1 bg-[#3147ff] relative overflow-hidden text-white leading-7 py-4 px-[18px] rounded-lg transition-all duration-300 cursor-pointer text-[16px] font-semibold group">
+          <button className="max-w-[300px] my-[30px] flex justify-center items-center gap-1 bg-[#3147ff] relative overflow-hidden text-white leading-7 py-4 px-[18px] rounded-lg transition-all duration-300 cursor-pointer text-[16px] font-semibold group ">
             <span className="relative z-10 flex items-center gap-1">
               Get Free Consultation <MoveUpRight className="text-white h-4 w-4 mt-[-3px]" />{" "}
             </span>
@@ -65,7 +67,7 @@ const Banner = () => {
             <img
               className="w-full h-full rounded-[40px] opacity-0 z-0"
               style={{
-                animation: "img-anim-top 1.3s forwards cubic-bezier(0.645, 0.045, 0.355, 1)",
+                animation: "anim-bottom-top 1.3s forwards cubic-bezier(0.645, 0.045, 0.355, 1)",
               }}
               decoding="async"
               src={bannerImage}

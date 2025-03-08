@@ -5,6 +5,22 @@
   --breakpoint-xs: 30rem;
   --breakpoint-tab: 62rem;
 }
+@layer utilities {
+  @keyframes anim-bottom-top {
+    0% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-bottom-top {
+    animation: anim-bottom-top 1.3s forwards cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
 
 ul , li, a, p , div{
   font-family: 'Poppins', sans-serif;
