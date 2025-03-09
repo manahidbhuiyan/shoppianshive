@@ -278,12 +278,12 @@ const ServicesPage = () => {
             </div>
           </div>
         </div>
-
+        {/* faq area start */}
         <div className="w-full max-w-4xl mx-auto">
           <div className="faq-items">
             <div className="accordion transition-all duration-400">
               {faqItems.map((item, index) => (
-                <div key={index} className="bg-[#f4f6ff] rounded-2xl mb-4 overflow-hidden group">
+                <div key={index} className="bg-[#f4f6ff] rounded-2xl mb-4 overflow-hidden group ">
                   <h2>
                     <button className="w-full text-left flex justify-between items-center py-6 px-8 text-xl font-medium text-[#161616] focus:outline-none" onClick={() => toggleAccordion(index)}>
                       <span>Q. {item.question}</span>
@@ -297,7 +297,7 @@ const ServicesPage = () => {
                     </button>
                   </h2>
 
-                  <div className={`transition-all duration-500 overflow-hidden ${openItem === index ? "max-h-96" : "max-h-0"}`}>
+                  <div className={`transition-all duration-500 overflow-hidden ${openItem === index ? "flex" : "hidden"}`}>
                     <div className="px-8 pb-5">
                       <p className="text-[#49515b] text-base leading-8 font-normal">{item.answer}</p>
                     </div>

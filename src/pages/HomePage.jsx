@@ -53,7 +53,7 @@ const HomePage = () => {
 
       <div className="py-10 lg:py-20">
         <div className="container mx-auto">
-          <div className="w-full relative pt-[60px] px-10 pb-[50px] border border-[#eee3fa] rounded-[30px] ">
+          <div className="w-full relative py-8 lg:pt-[60px] px-6 lg:px-10 lg:pb-[50px] border border-[#eee3fa] rounded-[30px] ">
             <div className="absolute top-[-17px] left-0 md:left-[67px] text-center py-2.5 px-5 leading-none inline-block bg-white rounded-[46px] mb-[60px] shadow-[0px_1px_2px_0px_rgba(45,54,67,0.05)]">
               <h6 className="text-[15px] text-[#515151] font-medium flex gap-1 items-center">
                 <span>
@@ -94,7 +94,7 @@ const HomePage = () => {
       </div>
 
       {/* why choose us */}
-      <div className="pt-20 ">
+      <div className="pt-10 ">
         <div className="container mx-auto">
           {/* 1st section */}
           <div className="w-full flex flex-col xl:flex-row justify-between">

@@ -3,13 +3,14 @@ import { X, AlignJustify, Phone, MoveUpRight, SquareDashed } from "lucide-react"
 import reactLogo from "../assets/images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF, faTwitter, faYoutube, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuIsOpen] = useState(false);
   const [isSidebarOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isSticky, setIsSticky] = useState(false);
+  const location = useLocation(); // Get current location/URL
 
   // Toggle Menubar
   const toggleMenubar = () => {
@@ -23,6 +24,16 @@ const Navbar = () => {
   const toggleSideMenubar = () => {
     setIsOpen(false);
     setMenuIsOpen(false);
+  };
+
+  // Check if link is active
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
+  // Handle mobile navigation click - navigate and close sidebar
+  const handleNavClick = () => {
+    toggleSideMenubar(); // Close both menus
   };
 
   useEffect(() => {
@@ -53,27 +64,42 @@ const Navbar = () => {
 
         <ul className="hidden lg:flex items-center space-x-8 text-black">
           <li>
-            <Link to="/" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
+            <Link 
+              to="/" 
+              className={`${isActive("/") ? "text-[#615cf6]" : "text-[#161616]"} hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer`}
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link to="/services" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
+            <Link 
+              to="/services" 
+              className={`${isActive("/services") ? "text-[#615cf6]" : "text-[#161616]"} hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer`}
+            >
               Services
             </Link>
           </li>
           <li>
-            <Link to="/portfolio" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
+            <Link 
+              to="/portfolio" 
+              className={`${isActive("/portfolio") ? "text-[#615cf6]" : "text-[#161616]"} hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer`}
+            >
               Portfolio
             </Link>
           </li>
           <li>
-            <Link to="/about-us" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
+            <Link 
+              to="/about-us" 
+              className={`${isActive("/about-us") ? "text-[#615cf6]" : "text-[#161616]"} hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer`}
+            >
               About Us
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer">
+            <Link 
+              to="/contact" 
+              className={`${isActive("/contact") ? "text-[#615cf6]" : "text-[#161616]"} hover:text-[#615cf6] text-base leading-7 py-5 font-medium transition cursor-pointer`}
+            >
               Contact
             </Link>
           </li>
@@ -191,28 +217,48 @@ const Navbar = () => {
         </div>
 
         <ul className="mb-4 space-y-2 text-[#161616]">
-          <li className=" py-2 border-b border-gray-700">
-            <Link to="/" className="text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
+          <li className="py-2 border-b border-gray-700">
+            <Link 
+              to="/" 
+              onClick={handleNavClick}
+              className={`${isActive("/") ? "text-[#615cf6]" : "text-[#161616]"} hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer`}
+            >
               Home
             </Link>
           </li>
-          <li className=" py-2 border-b border-gray-700">
-            <Link to="/services" className="block text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
+          <li className="py-2 border-b border-gray-700">
+            <Link 
+              to="/services" 
+              onClick={handleNavClick}
+              className={`block ${isActive("/services") ? "text-[#615cf6]" : "text-[#161616]"} hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer`}
+            >
               Services
             </Link>
           </li>
-          <li className=" py-2 border-b border-gray-700">
-            <Link to="/portfolio" className="block text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
+          <li className="py-2 border-b border-gray-700">
+            <Link 
+              to="/portfolio" 
+              onClick={handleNavClick}
+              className={`block ${isActive("/portfolio") ? "text-[#615cf6]" : "text-[#161616]"} hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer`}
+            >
               Portfolio
             </Link>
           </li>
-          <li className=" py-2 border-b border-gray-700">
-            <Link to="/about-us" className="block text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
+          <li className="py-2 border-b border-gray-700">
+            <Link 
+              to="/about-us" 
+              onClick={handleNavClick}
+              className={`block ${isActive("/about-us") ? "text-[#615cf6]" : "text-[#161616]"} hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer`}
+            >
               About us
             </Link>
           </li>
-          <li className=" py-2 border-b border-gray-700">
-            <Link to="/contact" className="block text-[#161616] hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer">
+          <li className="py-2 border-b border-gray-700">
+            <Link 
+              to="/contact" 
+              onClick={handleNavClick}
+              className={`block ${isActive("/contact") ? "text-[#615cf6]" : "text-[#161616]"} hover:text-[#615cf6] text-base leading-7 font-medium transition cursor-pointer`}
+            >
               Contact
             </Link>
           </li>

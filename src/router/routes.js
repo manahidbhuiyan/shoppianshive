@@ -1,10 +1,13 @@
 // src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from '../pages/HomePage.jsx';
-import AboutPage from '../pages/HomePage.jsx'; // Example page
-import ContactPage from '../pages/ContactPage.jsx'; 
-import Header from '../components/Navbar.jsx'; // Optional: If you have a Header component
-// import Footer from '../src/components/Footer_1.jsx'; // Optional: If you have a Footer component
+import ServicesPage from '../pages/ServicesPage.jsx'; // Make sure this is imported
+import PortfolioPage from '../pages/PortfolioPage.jsx'; // Make sure this is imported
+import AboutPage from '../pages/AboutPage.jsx'; // Fixed import (was pointing to HomePage)
+import ContactPage from '../pages/ContactPage.jsx';
+
+import Header from '../components/Navbar.jsx';
+// import Footer from '../components/Footer.jsx'; // Uncomment if you have a Footer component
 
 function App() {
   return (
@@ -17,6 +20,7 @@ function App() {
         <Route path="/about-us" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
+      {/* {Footer && <Footer />} */}
     </Router>
   );
 }
