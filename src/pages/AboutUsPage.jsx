@@ -1,6 +1,6 @@
 import React from "react";
 
-import BreadCrumb from "../components/breadcrumb";
+import BreadCrumb from "../components/BreadCrumb.jsx";
 import CounterTow from "../components/about/CounterTwo.jsx";
 
 import bannerImage from "../assets/images/about/banner.jpg";

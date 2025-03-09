@@ -49,8 +49,8 @@ const HomePage = () => {
   return (
     <div>
       <Banner />
-      {/* partners */}
 
+      {/* partners */}
       <div className="py-10 lg:py-20">
         <div className="container mx-auto">
           <div className="w-full relative py-8 lg:pt-[60px] px-6 lg:px-10 lg:pb-[50px] border border-[#eee3fa] rounded-[30px] ">

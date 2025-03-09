@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BreadCrumb from "../components/breadcrumb";
+import BreadCrumb from "../components/BreadCrumb.jsx";
 import Footer_2 from "../components/Footer_2";
 
 import cardBg from "../assets/images/services/card-bg.png";

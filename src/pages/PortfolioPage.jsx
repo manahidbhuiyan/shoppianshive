@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "../components/breadcrumb";
+import BreadCrumb from "../components/BreadCrumb.jsx";
 
 import portfolio1 from "../assets/images/portfolio/portfolio-1.jpg";
 import portfolio2 from "../assets/images/portfolio/portfolio-2.png";
