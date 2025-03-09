@@ -1,6 +1,5 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import SectionTitle from "../components/SectionTitle";
 
 import { MoveUpRight } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +10,7 @@ import choose2RemoveBg from "../assets/images/choose-2-removebg.png";
 import upWork from "../assets/images/icon/upwork.svg";
 import fullStar from "../assets/images/icon/full-star.svg";
 
+import SectionTitle from "../components/SectionTitle";
 import Banner from "../components/Banner";
 import Counter from "../components/Counter";
 import ParallaxSection from "../components/Parallax";

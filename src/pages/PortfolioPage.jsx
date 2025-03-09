@@ -1,5 +1,6 @@
 import React from "react";
 import BreadCrumb from "../components/BreadCrumb.jsx";
+import Footer_2 from "../components/Footer_2";
 
 import portfolio1 from "../assets/images/portfolio/portfolio-1.jpg";
 import portfolio2 from "../assets/images/portfolio/portfolio-2.png";
@@ -7,7 +8,6 @@ import portfolio3 from "../assets/images/portfolio/portfolio-3.png";
 import portfolio4 from "../assets/images/portfolio/portfolio-4.png";
 import portfolio5 from "../assets/images/portfolio/portfolio-5.jpg";
 import portfolio6 from "../assets/images/portfolio/portfolio-6.jpg";
-import Footer_2 from "../components/Footer_2";
 
 const PortfolioPage = () => {
   return (

@@ -47,6 +47,15 @@ const ServicesPage = () => {
       answer:
         "Most reputable CRM providers implement robust security measures including data encryption, regular backups, access controls, compliance with regulations like GDPR, and security certifications such as SOC 2. However, security levels can vary between providers, so it's important to verify specific security features.",
     },
+    {
+      question: "What kind of customer support do you offer?",
+      answer: "CRM (Customer Relationship Management) software helps businesses centralize data, streamline sales processes, and improve customer.",
+    },
+    {
+      question: "Integrate CRM software with other applications?",
+      answer:
+        "Yes, our CRM software offers robust integration capabilities with various business applications including email platforms, marketing automation tools, e-commerce systems, accounting software, and more. This enables seamless data flow and process automation across your entire business ecosystem.",
+    },
   ];
 
   const toggleAccordion = (index) => {
